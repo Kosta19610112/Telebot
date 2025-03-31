@@ -1,4 +1,4 @@
-
+import os
 import telebot
 import requests
 from datetime import datetime, timedelta
@@ -11,6 +11,8 @@ import pytz
 OPENWEATHER_API_KEY = '1f30db42752361354d4cf1f02835861e'
 
 # Создаем экземпляр бота
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # Функция для получения текущей погоды
