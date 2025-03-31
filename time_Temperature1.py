@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 import pytz
 
 # Токен вашего Telegram-бота
-BOT_TOKEN = '7836792649:AAG_GBsatMM3aEW2k2hyntEt_Loj1nKDoRY'
+
 
 # API ключ OpenWeatherMap
 OPENWEATHER_API_KEY = '1f30db42752361354d4cf1f02835861e'
