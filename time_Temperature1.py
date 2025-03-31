@@ -3,6 +3,7 @@ import telebot
 import requests
 from datetime import datetime, timedelta
 import pytz
+from dotenv import load_dotenv
 
 # Токен вашего Telegram-бота
 
@@ -11,7 +12,7 @@ import pytz
 OPENWEATHER_API_KEY = '1f30db42752361354d4cf1f02835861e'
 
 # Создаем экземпляр бота
-
+load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(BOT_TOKEN)
 
