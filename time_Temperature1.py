@@ -53,10 +53,10 @@ def get_local_time(city_timezone):
 # Обработчик команды /start
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.reply_to(message, "Привет! Я могу показать текущее время, температуру и прогноз погоды в разных городах. Напишите /weather.")
+    bot.reply_to(message, "Привет! Я могу показать текущее время, температуру и прогноз погоды в разных городах. Напишите /w.")
 
-# Обработчик команды /weather
-@bot.message_handler(commands=['weather'])
+# Обработчик команды /w
+@bot.message_handler(commands=['w'])
 def weather(message):
     # Текущее время (Московское время)
     current_time_moscow = get_local_time('Europe/Moscow')
