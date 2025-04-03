@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 # Токен вашего Telegram-бота
 
 
+PORT = int(os.getenv('PORT', 8080))
+
 # API ключ OpenWeatherMap
 OPENWEATHER_API_KEY = '1f30db42752361354d4cf1f02835861e'
 
