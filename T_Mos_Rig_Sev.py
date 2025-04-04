@@ -13,7 +13,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 OPENWEATHER_API_KEY = '1f30db42752361354d4cf1f02835861e'
 
 # Исправляем получение WEBHOOK_URL
-WEBHOOK_URL = os.getenv("WEBHOOK_URL", "https://telebot-gpg6.onrender.com/webhook")  # например, https://yourappname.onrender.com
+WEBHOOK_URL = os.getenv("WEBHOOK_URL", "https://telebot-gpg6.onrender.com")  # например, 
 
 bot = telebot.TeleBot(BOT_TOKEN)
 app = Flask(__name__)
