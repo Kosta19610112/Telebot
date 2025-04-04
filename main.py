@@ -19,7 +19,7 @@ bot = telebot.TeleBot(BOT_TOKEN)
 app = Flask(__name__)
 
 
-
+webhook_setup_done = False
 
 webhook_info = bot.get_webhook_info()
 print(webhook_info)
