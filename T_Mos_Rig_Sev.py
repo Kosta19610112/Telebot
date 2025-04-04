@@ -19,7 +19,7 @@ bot = telebot.TeleBot(BOT_TOKEN)
 app = Flask(__name__)
 
 # Флаг для отслеживания первого запроса
-webhook_setup_done = False
+#webhook_setup_done = False
 
 # ========== ТВОИ ФУНКЦИИ ==========
 
