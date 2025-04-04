@@ -1,4 +1,6 @@
-telebot
+pyTelegramBotAPI
+Flask
+python-dotenv
 requests
 pytz
-python-dotenv
+gunicorn

@@ -11,7 +11,8 @@ load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 OPENWEATHER_API_KEY = '1f30db42752361354d4cf1f02835861e'
-WEBHOOK_URL = os.getenv("WEBHOOK_URL")  # например, https://yourappname.onrender.com
+
+WEBHOOK_URL = os.getenv("https://dashboard.render.com/web/srv-cvl8rlqdbo4c73d8s78g")  # например, https://yourappname.onrender.com
 
 bot = telebot.TeleBot(BOT_TOKEN)
 app = Flask(__name__)
