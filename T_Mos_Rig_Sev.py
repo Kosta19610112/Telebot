@@ -88,6 +88,11 @@ def weather(message):
 
 # ========== WEBHOOK ОБРАБОТКА ==========
 
+@app.route('/', methods=['GET'])
+def index():
+    return "Bot is running!", 200
+
+
 @app.route('/', methods=['POST'])
 def webhook():
     global webhook_setup_done
