@@ -12,11 +12,14 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 OPENWEATHER_API_KEY = '1f30db42752361354d4cf1f02835861e'
 
-WEBHOOK_URL = os.getenv("https://telebot-gpg6.onrender.com")  # например, https://yourappname.onrender.com
-
+# Исправляем получение WEBHOOK_URL
+WEBHOOK_URL = os.getenv("WEBHOOK_URL", "https://telebot-gpg6.onrender.com")  # например, https://yourappname.onrender.com
 
 bot = telebot.TeleBot(BOT_TOKEN)
 app = Flask(__name__)
+
+# Флаг для отслеживания первого запроса
+webhook_setup_done = False
 
 # ========== ТВОИ ФУНКЦИИ ==========
 
@@ -87,6 +90,11 @@ def weather(message):
 
 @app.route('/', methods=['POST'])
 def webhook():
+    global webhook_setup_done
+    if not webhook_setup_done:
+        setup_webhook()
+        webhook_setup_done = True
+
     if request.headers.get('content-type') == 'application/json':
         json_str = request.get_data().decode('utf-8')
         update = telebot.types.Update.de_json(json_str)
@@ -95,7 +103,6 @@ def webhook():
     else:
         return 'Unsupported Media Type', 415
 
-@app.before_first_request
 def setup_webhook():
     bot.remove_webhook()
     bot.set_webhook(url=WEBHOOK_URL)
